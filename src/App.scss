@@ -1,0 +1,75 @@
+$background-color: hsl(218, 19%, 25%);
+$background-color-darkened: hsl(218, 19%, 20%);
+$background-color-darker: hsl(218, 19%, 10%);
+$primary-color: #b0b7c2;
+$secondary-color: #0bd3ab;
+$border-color: hsl(218, 19%, 10%);
+
+$border-radius: 1rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body, textarea {
+  background-color: $background-color;
+  color: $primary-color;
+
+  font-size: 1.6rem;
+}
+
+.container {
+  padding: 8rem 2rem 2rem 2rem;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 2fr 3fr;
+  gap: 1rem;
+}
+
+.container-left, .container-right {
+  height: 100%;
+}
+
+.label {
+  background-color: $secondary-color;
+  border: .1rem solid $secondary-color;
+  padding: .5rem 1rem;
+  color: $background-color-darker;
+  font-weight: 600;
+}
+
+.input, .output {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border: none;
+  background-color: $background-color-darkened;
+}
+
+.input {
+  font-family: 'Courier New', Courier, monospace;
+  color: #0bd3ab;
+  border: .1rem solid $secondary-color;
+}
+
+.input:focus {
+  outline: 0;
+  border: 1px solid white;
+  background-color: rgba($secondary-color, .1);
+  color: white;
+
+  &::selection {
+    background: rgba($secondary-color,.5);
+  }
+}
+
+.output {
+  border: .2rem solid $background-color-darker;
+}
