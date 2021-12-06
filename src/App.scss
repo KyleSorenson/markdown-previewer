@@ -51,6 +51,7 @@ body, textarea {
   padding: 1rem;
   border: none;
   background-color: $background-color-darkened;
+  overflow: scroll;
 }
 
 .input {
@@ -72,4 +73,42 @@ body, textarea {
 
 .output {
   border: .2rem solid $background-color-darker;
+
+  &__html{
+    overflow: scroll;
+
+    a, a:visited {
+      color: $secondary-color;
+    }
+
+    h1, h2, h3, p, pre, ul, ol, table, blockquote {
+      margin-bottom: 1.6rem;
+    }
+
+    ul, ol, li {
+      margin-left: 1rem;
+    }
+
+    th, td {
+      border: .1rem solid $primary-color;
+      padding: 1rem;
+    }
+
+    code {
+      background-color: $background-color-darker;
+      color: $secondary-color;
+    }
+
+    pre, blockquote {
+      display: block;
+      background-color: $background-color-darker;
+      padding: 1rem;
+      border-left: .1rem solid $primary-color;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
