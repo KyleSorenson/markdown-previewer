@@ -7,6 +7,8 @@ $border-color: hsl(218, 19%, 10%);
 
 $border-radius: 1rem;
 
+$label-height: 3rem;
+
 * {
   margin: 0;
   padding: 0;
@@ -18,15 +20,15 @@ html {
 }
 
 body, textarea {
-  background-color: $background-color;
+  background-color: $background-color-darkened;
   color: $primary-color;
 
   font-size: 1.6rem;
 }
 
 .container {
-  padding: 8rem 2rem 2rem 2rem;
   display: grid;
+  padding: 2rem;
   height: 100vh;
   grid-template-columns: 2fr 3fr;
   gap: 1rem;
@@ -37,20 +39,23 @@ body, textarea {
 }
 
 .label {
+  height: $label-height;
   background-color: $secondary-color;
   border: .1rem solid $secondary-color;
-  padding: .5rem 1rem;
   color: $background-color-darker;
   font-weight: 600;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .input, .output {
   resize: none;
   width: 100%;
-  height: 100%;
+  height: calc(100% - #{$label-height});
   padding: 1rem;
   border: none;
-  background-color: $background-color-darkened;
+  background-color: $background-color;
   overflow: scroll;
 }
 
@@ -58,11 +63,13 @@ body, textarea {
   font-family: 'Courier New', Courier, monospace;
   color: #0bd3ab;
   border: .1rem solid $secondary-color;
+  border-top: 0;
 }
 
 .input:focus {
   outline: 0;
   border: 1px solid white;
+  border-top: 0;
   background-color: rgba($secondary-color, .1);
   color: white;
 
@@ -72,7 +79,8 @@ body, textarea {
 }
 
 .output {
-  border: .2rem solid $background-color-darker;
+  border: .1rem solid $primary-color;
+  border-top: 0;
 
   &__html{
     overflow: scroll;
