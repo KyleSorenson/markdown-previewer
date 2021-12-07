@@ -29,13 +29,23 @@ body, textarea {
 .container {
   display: grid;
   padding: 2rem;
-  height: 100vh;
-  grid-template-columns: 2fr 3fr;
-  gap: 1rem;
+  min-height: 100vh;
+  grid-template-columns: minmax(30%, auto) 1rem minmax(50%, auto);
 }
 
-.container-left, .container-right {
+.left-pane, .right-pane {
   height: 100%;
+}
+
+.gutter {
+  background-color: $background-color;
+  border-top: .1rem solid $background-color;
+  border-bottom: .1rem solid $background-color;
+
+  &:hover {
+    cursor: col-resize;
+    background-color: $background-color-darkened;
+  }
 }
 
 .label {
@@ -81,6 +91,7 @@ body, textarea {
 .output {
   border: .1rem solid $primary-color;
   border-top: 0;
+  overflow: scroll;
 
   &__html{
     overflow: scroll;
