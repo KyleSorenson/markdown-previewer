@@ -3,6 +3,7 @@ $background-color-darkened: hsl(218, 19%, 20%);
 $background-color-darker: hsl(218, 19%, 10%);
 $primary-color: #b0b7c2;
 $secondary-color: #0bd3ab;
+$secondary-color-darker: hsl(168, 90%, 35%);
 $border-color: hsl(218, 19%, 10%);
 
 $border-radius: 1rem;
@@ -30,8 +31,18 @@ body, textarea {
   display: grid;
   padding: 2rem;
   height: 100vh;
-  grid-template-columns: 2fr 3fr;
-  gap: 1rem;
+  grid-template-columns: calc(40% - .4em) .8rem calc(60% - .4rem);
+  gap: 0;
+}
+
+.resizer {
+  background-color: $secondary-color-darker;
+  border-left: .2rem solid $background-color-darkened;
+  border-right: .2rem solid $background-color-darkened;
+
+  &:hover {
+    cursor: col-resize;
+  }
 }
 
 .container-left, .container-right {
@@ -63,13 +74,11 @@ body, textarea {
   font-family: 'Courier New', Courier, monospace;
   color: #0bd3ab;
   border: .1rem solid $secondary-color;
-  border-top: 0;
 }
 
 .input:focus {
   outline: 0;
   border: 1px solid white;
-  border-top: 0;
   background-color: rgba($secondary-color, .1);
   color: white;
 
