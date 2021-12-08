@@ -6,13 +6,6 @@ import { defaultMarkdown } from './defaultMarkdown.js';
 
 function App() {
 
-  // const leftPane = document.getElementById('left-pane');
-  // const rightPane = document.getElementById('right-pane')
-  // const leftPaneWidth = leftPane.getBoundingClientRect().width;
-  // const rightPaneWidth = rightPane.getBoundingClientRect().width;
-
-  // console.log(`left: ${leftPaneWidth} right: ${rightPaneWidth}`);
-
   const calculateLeftPane = (windowInnerWidth) => {
     const padding = 20;
     const percent = .4;
