@@ -30,7 +30,7 @@ body, textarea {
   display: grid;
   padding: 2rem;
   min-height: 100vh;
-  grid-template-columns: minmax(30%, auto) 1rem minmax(50%, auto);
+  grid-template-columns: minmax(40%, auto) 1rem auto;
 }
 
 .left-pane, .right-pane {

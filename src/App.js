@@ -6,12 +6,30 @@ import { defaultMarkdown } from './defaultMarkdown.js';
 
 function App() {
 
-  const leftPane = document.getElementById('left-pane');
-  const rightPane = document.getElementById('right-pane')
+  // const leftPane = document.getElementById('left-pane');
+  // const rightPane = document.getElementById('right-pane')
   // const leftPaneWidth = leftPane.getBoundingClientRect().width;
   // const rightPaneWidth = rightPane.getBoundingClientRect().width;
 
   // console.log(`left: ${leftPaneWidth} right: ${rightPaneWidth}`);
+
+  const calculateLeftPane = (windowInnerWidth) => {
+    const padding = 20;
+    const percent = .4;
+    return (windowInnerWidth - (padding * 2)) * percent
+  }
+
+  const calculateRightPane = (windowInnerWidth, leftPaneWidth) => {
+    const padding = 20;
+    const gutterWidth = 10;
+    return windowInnerWidth - leftPaneWidth - gutterWidth - ( padding * 2)
+  }
+
+  const [dimensions, setDimensions] = useState({
+    window: window.innerWidth,
+    leftPane: calculateLeftPane(window.innerWidth),
+    rightPane: calculateRightPane(window.innerWidth, calculateLeftPane(window.innerWidth)),
+  });
 
   const [markdown, setMarkdown] = useState(defaultMarkdown);
 
@@ -20,11 +38,16 @@ function App() {
   }
 
   const handleResize = (e) => {
-    
-    console.log(e.pageX)
+    e.preventDefault();
+    let prevX = e.clientX;
 
-    const mousemove = () => {
-
+    const mousemove = (e) => {
+      let newX = prevX - e.clientX;
+      setDimensions({
+        window: dimensions['window'],
+        leftPane: dimensions['leftPane'] - newX,
+        rightPane: calculateRightPane(window.innerWidth, dimensions['leftPane'] - newX)
+      })
     }
     
     const mouseup = () => {
@@ -37,7 +60,7 @@ function App() {
   }
 
   return (
-    <div className="container">
+    <div className="container" style={{gridTemplateColumns: `${dimensions['leftPane']}px 1rem auto`}}>
       <div className="left-pane" id="left-pane">
         <div className="label">Editor</div>
         <textarea className="input" id="editor" onChange={handleChange}>
