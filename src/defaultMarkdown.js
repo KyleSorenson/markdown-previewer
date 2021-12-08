@@ -1,43 +1,59 @@
-export const defaultMarkdown = `# Welcome to my React Markdown Previewer!
+export const defaultMarkdown = `# React Markdown Previewer
 
-## This is a sub-heading...
-### And here's some other cool stuff:
+<span style="font-size: 12px; display: block; transform: translateY(-2px)">[Project 2](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer) from [Free Code Camp's Front End Development Libraries Curriculum](https://www.freecodecamp.org/learn/front-end-development-libraries)</span>
 
-Here's some code, \`<div></div>\`, between 2 backticks.
+---
+
+## Features
+
+- Typing into the left panel will update the right panel
+- Panel widths are adjustable (click and drag the gutter in the center)
+
+---
+
+## Sample Markdown
+
+### 1. Typography
+
+- **Bold** text is typed between a set of two asterisks
+- *Italic* text is typed between a set of one asterisk
+- ~~Strike-through~~ text is typed between tildas
+
+### 2. Lists
+
+- Unordered lists are typed with a hyphen at the start of the line
+  - They can be indented
+
+1. Ordered lists
+2. Are typed with a number
+3. At the start of the line.
+
+### 3. Links
+
+- Links are typed within brackets, followed by a url parenthetical:
+  - [My Portfolio](https://kylesorenson.me)
+
+### 4. Code Blocks
+
+- Inline code is typed between 2 backticks: \`<code>Sample Inline Code</code>\`
+- Multi-line code is typed between lines of three backticks:
 
 \`\`\`
-// this is multi-line code:
-
-function anotherExample(firstLine, lastLine) {
-  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
-    return multiLineCode;
-  }
+const helloWorld = () => {
+ console.log('Hello World');
 }
 \`\`\`
 
-You can also make text **bold**... whoa!
-Or _italic_.
-Or... wait for it... **_both!_**
-And feel free to go crazy ~~crossing stuff out~~.
+### 5. Block Quotes
 
-There's also [links](https://www.freecodecamp.org), and
-> Block Quotes!
+- Block quotes are typed with a right carrot at the start of the line:
 
-And if you want to get really crazy, even tables:
+> "To be or not to be. That is the question."
 
-Wild Header | Crazy Header | Another Header?
------------- | ------------- | -------------
-Your content can | be here, and it | can be here....
-And here. | Okay. | I think we get it.
+### 6. Images
 
-- And of course there are lists.
-  - Some are bulleted.
-     - With different indentation levels.
-        - That look like this.
+- Images are typed similarly to links, but with an exclamation point at the beginning. Text within the brackets will become the alt text for the image.
 
+![React Logo](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K)
 
-1. And there are numbered lists too.
-1. Use just 1s if you want!
-1. And last but not least, let's not forget embedded images:
-
-![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)`;
+`
