@@ -1,10 +1,13 @@
 import './App.scss';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
-import { useState } from 'react';
-import { defaultMarkdown } from './defaultMarkdown.js';
+import { useState, useEffect } from 'react';
+// import { defaultMarkdown } from './defaultMarkdown.js';
+const markdownPath = 'markdown.md'; // relative to public folder
 
 function App() {
+
+    // Handling Resize
 
   const calculateLeftPane = (windowInnerWidth) => {
     const padding = 20;
@@ -24,7 +27,17 @@ function App() {
     rightPane: calculateRightPane(window.innerWidth, calculateLeftPane(window.innerWidth)),
   });
 
-  const [markdown, setMarkdown] = useState(defaultMarkdown);
+  // Handling Markdown
+ 
+  const [markdown, setMarkdown] = useState('');
+
+  useEffect(() => {
+    fetch(markdownPath)
+      .then(response => response.text())
+      .then(text => {
+        setMarkdown(text);
+      })
+  },[]);
 
   const handleChange = (e) => {
     setMarkdown(e.target.value)
@@ -57,7 +70,7 @@ function App() {
       <div className="left-pane" id="left-pane">
         <div className="label">Editor</div>
         <textarea className="input" id="editor" onChange={handleChange}>
-          {defaultMarkdown}
+          {markdown}
         </textarea>
       </div>
       <div className="gutter" onMouseDown={handleResize}></div>
