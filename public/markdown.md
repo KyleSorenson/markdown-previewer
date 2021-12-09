@@ -13,13 +13,13 @@
 
 ## Sample Markdown
 
-### 1. Typography
+### Typography
 
 - **Bold** text is typed between a set of two asterisks
 - *Italic* text is typed between a set of one asterisk
 - ~~Strike-through~~ text is typed between tildas
 
-### 2. Lists
+### Lists
 
 - Unordered lists are typed with a hyphen at the start of the line
   - They can be indented
@@ -28,29 +28,29 @@
 2. Are typed with a number
 3. At the start of the line.
 
-### 3. Links
+### Links
 
 - Links are typed within brackets, followed by a url parenthetical:
   - [My Portfolio](https://kylesorenson.me)
 
-### 4. Code Blocks
+### Code Blocks
 
-- Inline code is typed between 2 backticks: \`<code>Sample Inline Code</code>\`
+- Inline code is typed between 2 backticks: `<code>Sample Inline Code</code>`
 - Multi-line code is typed between lines of three backticks:
 
-\`\`\`
+```
 const helloWorld = () => {
  console.log('Hello World');
 }
-\`\`\`
+```
 
-### 5. Block Quotes
+### Block Quotes
 
 - Block quotes are typed with a right carrot at the start of the line:
 
 > "To be or not to be. That is the question."
 
-### 6. Images
+### Images
 
 - Images are typed similarly to links, but with an exclamation point at the beginning. Text within the brackets will become the alt text for the image.
 

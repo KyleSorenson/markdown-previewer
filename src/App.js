@@ -2,12 +2,11 @@ import './App.scss';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import { useState, useEffect } from 'react';
-// import { defaultMarkdown } from './defaultMarkdown.js';
 const markdownPath = 'markdown.md'; // relative to public folder
 
 function App() {
 
-    // Handling Resize
+  // Handling Resize
 
   const calculateLeftPane = (windowInnerWidth) => {
     const padding = 20;
@@ -69,9 +68,7 @@ function App() {
     <div className="container" style={{gridTemplateColumns: `${dimensions['leftPane']}px 1rem auto`}}>
       <div className="left-pane" id="left-pane">
         <div className="label">Editor</div>
-        <textarea className="input" id="editor" onChange={handleChange}>
-          {markdown}
-        </textarea>
+        <textarea className="input" id="editor" onChange={handleChange} value={markdown} />
       </div>
       <div className="gutter" onMouseDown={handleResize}></div>
       <div className="right-pane" id="right-pane">
